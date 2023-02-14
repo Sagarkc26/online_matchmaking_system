@@ -38,21 +38,48 @@ class LoginPage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20))),
               onPressed: () {},
-              child: Text("LOG IN"),
+              child: const Text("LOG IN"),
             ),
           ),
           const SizedBox(
             height: 30,
           ),
-          const Text("forget password"),
-          const Text("OR"),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff2B2D42),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20))),
-              onPressed: () {},
-              child: Text("SIGN UP")),
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: const [
+                Text(
+                  "forget password??",
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.red,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          const Text(
+            "OR",
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          SizedBox(
+            height: 40,
+            width: 100,
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xff2B2D42),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20))),
+                onPressed: () {},
+                child: const Text("SIGN UP")),
+          ),
           Row(
             children: [
               IconButton(onPressed: () {}, icon: Icon(Icons.facebook)),
