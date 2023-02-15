@@ -58,7 +58,25 @@ class Signup extends StatelessWidget {
                 }));
               },
               child: const Text("SIGN UP")),
-        )
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: const [
+            Padding(
+              padding: EdgeInsets.only(right: 40),
+              child: Text(
+                "forget password??",
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.red),
+              ),
+            ),
+          ],
+        ),
       ]),
     );
   }
