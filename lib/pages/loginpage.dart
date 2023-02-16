@@ -96,8 +96,10 @@ class LoginPage extends StatelessWidget {
             height: 30,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              const SizedBox(
+                width: 100,
+              ),
               IconButton(
                   iconSize: 50,
                   onPressed: () {},
