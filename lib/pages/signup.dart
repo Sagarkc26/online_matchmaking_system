@@ -39,90 +39,137 @@ class _SignupState extends State<Signup> {
           key: _key,
           child: Column(children: [
             Padding(
-              padding: const EdgeInsets.only(top: 100, left: 25, right: 25),
-              child: TextFormField(
-                controller: _userController,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return "Enter your Password";
-                  } else {
-                    return null;
-                  }
-                },
-                decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.email),
-                    label: const Text("Email/Phone"),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(28))),
+              padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
+              child: Container(
+                height: 80,
+                width: 120,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            "https://1000logos.net/wp-content/uploads/2023/01/Tinder-Logo-2012.png"))),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
-              child: TextFormField(
-                controller: _passwordContoller,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return "Enter your Password";
-                  } else {
-                    return null;
-                  }
-                },
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.password),
-                  suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          passwordVisible = !passwordVisible;
-                        });
-                      },
-                      icon: Icon(passwordVisible
-                          ? Icons.visibility
-                          : Icons.visibility_off)),
-                  label: const Text("Create password"),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(28)),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(28),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 11,
+                          offset: Offset(0, 7))
+                    ]),
+                child: TextFormField(
+                  controller: _userController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Enter your Password";
+                    } else {
+                      return null;
+                    }
+                  },
+                  decoration: InputDecoration(
+                      fillColor: Colors.grey[50],
+                      filled: true,
+                      prefixIcon: const Icon(Icons.email),
+                      label: const Text("Email/Phone"),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(28))),
                 ),
-                obscureText: passwordVisible,
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
-              child: TextFormField(
-                controller: _repasswordController,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return "Enter your Password";
-                  } else {
-                    return null;
-                  }
-                },
-                decoration: InputDecoration(
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(28),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 11,
+                          offset: Offset(0, 7))
+                    ]),
+                child: TextFormField(
+                  controller: _passwordContoller,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Enter your Password";
+                    } else {
+                      return null;
+                    }
+                  },
+                  decoration: InputDecoration(
+                    fillColor: Colors.grey[50],
+                    filled: true,
                     prefixIcon: const Icon(Icons.password),
                     suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
-                            repasswordVisible = !repasswordVisible;
+                            passwordVisible = !passwordVisible;
                           });
                         },
-                        icon: Icon(repasswordVisible
+                        icon: Icon(passwordVisible
                             ? Icons.visibility
                             : Icons.visibility_off)),
-                    label: const Text("Re-enter password"),
+                    label: const Text("Create password"),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(28))),
-                obscureText: repasswordVisible,
+                        borderRadius: BorderRadius.circular(28)),
+                  ),
+                  obscureText: passwordVisible,
+                ),
               ),
             ),
-            const SizedBox(
-              height: 30,
+            Padding(
+              padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(28),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black38,
+                          blurRadius: 11,
+                          offset: Offset(0, 7))
+                    ]),
+                child: TextFormField(
+                  controller: _repasswordController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Enter your Password";
+                    } else {
+                      return null;
+                    }
+                  },
+                  decoration: InputDecoration(
+                      fillColor: Colors.grey[50],
+                      filled: true,
+                      prefixIcon: const Icon(Icons.password),
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              repasswordVisible = !repasswordVisible;
+                            });
+                          },
+                          icon: Icon(repasswordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off)),
+                      label: const Text("Re-enter password"),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(28))),
+                  obscureText: repasswordVisible,
+                ),
+              ),
             ),
             SizedBox(
-              height: 48,
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
+            SizedBox(
+              height: 50,
               width: MediaQuery.of(context).size.width * 0.85,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
+                          borderRadius: BorderRadius.circular(28)),
                       backgroundColor: const Color(0xff2B2D42)),
                   onPressed: () {
                     final isValid = _key.currentState!.validate();
@@ -135,72 +182,105 @@ class _SignupState extends State<Signup> {
                   },
                   child: const Text("SIGN UP")),
             ),
-            const SizedBox(
-              height: 30,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
               children: const [
-                Padding(
-                  padding: EdgeInsets.only(right: 40),
-                  child: Text(
-                    "forget password??",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.red),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Divider(
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Text(
+                  "OR",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Divider(
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 50,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.066,
             ),
-            const Text(
-              "Already have an account?",
-              style: TextStyle(
-                  fontSize: 16, fontWeight: FontWeight.w500, color: Colors.red),
-            ),
-            const SizedBox(
-              height: 20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 45,
+                  width: 45,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage("images/facebook.png"))),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.05,
+                ),
+                Container(
+                  height: 45,
+                  width: 45,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage("images/google.png"))),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.05,
+                ),
+                Container(
+                  height: 45,
+                  width: 45,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage("images/twitter.png"))),
+                ),
+              ],
             ),
             SizedBox(
-              height: 40,
-              width: 100,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xff2B2D42),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  onPressed: () {
-                    final isValid = _key.currentState!.validate();
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
+              height: MediaQuery.of(context).size.height * 0.066,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Divider(
+                color: Colors.black,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Already have an account?",
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(
+                  width: 3,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
                       return const LoginPage();
                     }));
                   },
-                  child: const Text("LOG IN")),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Row(
-              children: [
-                const SizedBox(
-                  width: 100,
-                ),
-                IconButton(
-                    iconSize: 50,
-                    onPressed: () {},
-                    icon: const Icon(Icons.facebook)),
-                IconButton(
-                    iconSize: 50,
-                    onPressed: () {},
-                    icon: const Icon(Icons.facebook)),
-                IconButton(
-                    iconSize: 50,
-                    onPressed: () {},
-                    icon: const Icon(Icons.facebook))
+                  child: const Text(
+                    "Log In",
+                    style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline),
+                  ),
+                )
               ],
             )
           ]),

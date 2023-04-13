@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:online_matchmaking_system/pages/addphoto.dart';
 
-class Interest extends StatefulWidget {
-  const Interest({super.key});
+class DetailsPage extends StatefulWidget {
+  const DetailsPage({super.key});
 
   @override
-  State<Interest> createState() => _InterestState();
+  State<DetailsPage> createState() => _DetailsPageState();
 }
 
-class _InterestState extends State<Interest> {
+class _DetailsPageState extends State<DetailsPage> {
   TextEditingController dateinput = TextEditingController();
   //text editing controller for text field
 
