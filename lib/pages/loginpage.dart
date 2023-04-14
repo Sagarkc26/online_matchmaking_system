@@ -60,8 +60,10 @@ class _LoginPageState extends State<LoginPage> {
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Enter your Emailid";
-                    } else {
+                    } else if (value == "sagarkc26") {
                       return null;
+                    } else {
+                      return "Enter valid email";
                     }
                   },
                   controller: _emailController,
@@ -94,8 +96,10 @@ class _LoginPageState extends State<LoginPage> {
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Enter your Password";
-                    } else {
+                    } else if (value == "26kcsagar") {
                       return null;
+                    } else {
+                      return "Enter valid password";
                     }
                   },
                   controller: _passwordController,

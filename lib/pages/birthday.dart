@@ -48,7 +48,7 @@ class _DetailsPageState extends State<DetailsPage> {
                           dateinput, //editing controller of this TextField
                       decoration: const InputDecoration(
                           icon: Icon(Icons.calendar_today), //icon of text field
-                          labelText: "Enter Date" //label text of field
+                          hintText: "DD/MM/YYYY" //label text of field
                           ),
                       readOnly:
                           true, //set it true, so that user will not able to edit text

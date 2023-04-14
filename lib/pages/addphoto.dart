@@ -13,8 +13,14 @@ class AddPhotoPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text("Add Photos",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
-            const Text("Atleast two photos to continue"),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
+            const SizedBox(
+              height: 7,
+            ),
+            Text(
+              "Atleast two photos to continue",
+              style: TextStyle(color: Colors.black.withOpacity(0.7)),
+            ),
             const SizedBox(
               height: 60,
             ),
@@ -34,11 +40,15 @@ class AddPhotoPage extends StatelessWidget {
                     itemCount: 6,
                     itemBuilder: (BuildContext ctx, index) {
                       return Stack(children: [
-                        Container(
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: const Color(0xffD9D8D8),
-                            border: Border.all(width: 1),
+                        SizedBox(
+                          height: 125,
+                          width: 80,
+                          child: Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: const Color(0xffD9D8D8),
+                              border: Border.all(width: 1),
+                            ),
                           ),
                         ),
                         Positioned(
@@ -48,7 +58,9 @@ class AddPhotoPage extends StatelessWidget {
                               height: 22,
                               width: 22,
                               decoration: const BoxDecoration(
-                                  shape: BoxShape.circle, color: Colors.red),
+                                shape: BoxShape.circle,
+                                color: Colors.red,
+                              ),
                               child: const Center(
                                 child: Icon(
                                   Icons.add,
@@ -58,98 +70,6 @@ class AddPhotoPage extends StatelessWidget {
                             )),
                       ]);
                     })),
-
-            // Container(
-            //   height: 160,
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            //       Stack(
-            //         children: [
-            //           Container(
-            //             height: 150,
-            //             width: 100,
-            //             decoration: BoxDecoration(
-            //               color: const Color(0xffD9D8D8),
-            //               border: Border.all(),
-            //             ),
-            //           ),
-            //           Positioned(
-            //             bottom: 0,
-            //             right: 0,
-            //             child: Container(
-            //               height: 22,
-            //               width: 22,
-            //               decoration: const BoxDecoration(
-            //                   shape: BoxShape.circle, color: Colors.red),
-            //               child: const Center(child: Icon(Icons.add)),
-            //             ),
-            //           ),
-            //         ],
-            //       ),
-            //       const SizedBox(
-            //         width: 10,
-            //       ),
-            //       Container(
-            //         height: 150,
-            //         width: 100,
-            //         decoration: BoxDecoration(
-            //           color: const Color(0xffD9D8D8),
-            //           border: Border.all(),
-            //         ),
-            //       ),
-            //       const SizedBox(
-            //         width: 10,
-            //       ),
-            //       Container(
-            //         height: 150,
-            //         width: 100,
-            //         decoration: BoxDecoration(
-            //           color: const Color(0xffD9D8D8),
-            //           border: Border.all(),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // const SizedBox(
-            //   height: 10,
-            // ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Container(
-            //       height: 150,
-            //       width: 100,
-            //       decoration: BoxDecoration(
-            //         color: const Color(0xffD9D8D8),
-            //         border: Border.all(),
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       width: 10,
-            //     ),
-            //     Container(
-            //       height: 150,
-            //       width: 100,
-            //       decoration: BoxDecoration(
-            //         color: const Color(0xffD9D8D8),
-            //         border: Border.all(),
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       width: 10,
-            //     ),
-            //     Container(
-            //       height: 150,
-            //       width: 100,
-            //       decoration: BoxDecoration(
-            //         color: const Color(0xffD9D8D8),
-            //         border: Border.all(),
-            //       ),
-            //     ),
-            //   ],
-            // ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
