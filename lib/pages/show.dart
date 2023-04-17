@@ -51,7 +51,7 @@ class _ShowingPageState extends State<ShowingPage> {
         body: SafeArea(
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.09,
                 width: MediaQuery.of(context).size.width,
                 child: Row(
@@ -64,7 +64,7 @@ class _ShowingPageState extends State<ShowingPage> {
                 ),
               ),
               Expanded(
-                child: Container(
+                child: SizedBox(
                   child: SwipeCards(
                     matchEngine: _matchEngine!,
                     onStackFinished: () {
@@ -102,7 +102,7 @@ class _ShowingPageState extends State<ShowingPage> {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.12,
                 width: MediaQuery.of(context).size.width,
                 child: Row(
