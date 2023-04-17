@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -110,60 +109,144 @@ class _AddPhotoPageState extends State<AddPhotoPage> {
             SizedBox(
               width: MediaQuery.of(context).size.width,
             ),
-            SizedBox(
-                height: 300,
-                width: MediaQuery.of(context).size.width * 0.78,
-                child: GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: 120,
-                            childAspectRatio: 2 / 3,
-                            crossAxisSpacing: 20,
-                            mainAxisSpacing: 20),
-                    itemCount: 6,
-                    itemBuilder: (BuildContext ctx, index) {
-                      return Stack(children: [
-                        SizedBox(
-                          height: 125,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(children: [
+                  pickedImage != null
+                      ? Image.file(
+                          pickedImage!,
                           width: 80,
-                          child: pickedImage != null
-                              ? Image.file(
-                                  pickedImage!,
-                                  height: 125,
-                                  width: 80,
-                                )
-                              : Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffD9D8D8),
-                                    border: Border.all(width: 1),
-                                  ),
-                                ),
+                          height: 125,
+                          fit: BoxFit.cover,
+                        )
+                      : imagebox(),
+                  Positioned(
+                      bottom: 3,
+                      right: 2,
+                      child: Center(
+                        child: GestureDetector(
+                          onTap: () {
+                            imagePickerOption();
+                          },
+                          child: const Icon(
+                            Icons.add,
+                            color: Colors.red,
+                          ),
                         ),
-                        Positioned(
-                            bottom: 0,
-                            right: 0,
-                            child: GestureDetector(
-                              onTap: () {
-                                imagePickerOption();
-                              },
-                              child: Container(
-                                height: 22,
-                                width: 22,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.red,
-                                ),
-                                child: const Center(
-                                  child: Icon(
-                                    Icons.add,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            )),
-                      ]);
-                    })),
+                      ))
+                ]),
+                const SizedBox(
+                  width: 10,
+                ),
+                Stack(children: [
+                  pickedImage != null
+                      ? Image.file(
+                          pickedImage!,
+                          width: 80,
+                          height: 125,
+                          fit: BoxFit.cover,
+                        )
+                      : imagebox(),
+                  Positioned(
+                      bottom: 3,
+                      right: 2,
+                      child: Center(
+                        child: GestureDetector(
+                          onTap: () {
+                            imagePickerOption();
+                          },
+                          child: const Icon(
+                            Icons.add,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ))
+                ]),
+                const SizedBox(
+                  width: 10,
+                ),
+                Stack(children: [
+                  pickedImage != null
+                      ? Image.file(
+                          pickedImage!,
+                          width: 80,
+                          height: 125,
+                          fit: BoxFit.cover,
+                        )
+                      : imagebox(),
+                  Positioned(
+                      bottom: 3,
+                      right: 2,
+                      child: Center(
+                        child: GestureDetector(
+                          onTap: () {
+                            imagePickerOption();
+                          },
+                          child: const Icon(
+                            Icons.add,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ))
+                ]),
+              ],
+            ),
+            // SizedBox(
+            //     height: 300,
+            //     width: MediaQuery.of(context).size.width * 0.78,
+            //     child: GridView.builder(
+            //         gridDelegate:
+            //             const SliverGridDelegateWithMaxCrossAxisExtent(
+            //                 maxCrossAxisExtent: 120,
+            //                 childAspectRatio: 2 / 3,
+            //                 crossAxisSpacing: 20,
+            //                 mainAxisSpacing: 20),
+            //         itemCount: 6,
+            //         itemBuilder: (BuildContext ctx, index) {
+            //           return Stack(children: [
+            //             SizedBox(
+            //               height: 125,
+            //               width: 80,
+            //               child: pickedImage != null
+            //                   ? Image.file(
+            //                       pickedImage!,
+            //                       height: 125,
+            //                       width: 80,
+            //                       fit: BoxFit.cover,
+            //                     )
+            //                   : Container(
+            //                       alignment: Alignment.center,
+            //                       decoration: BoxDecoration(
+            //                         color: const Color(0xffD9D8D8),
+            //                         border: Border.all(width: 1),
+            //                       ),
+            //                     ),
+            //             ),
+            //             Positioned(
+            //                 bottom: 0,
+            //                 right: 0,
+            //                 child: GestureDetector(
+            //                   onTap: () {
+            //                     imagePickerOption();
+            //                   },
+            //                   child: Container(
+            //                     height: 22,
+            //                     width: 22,
+            //                     decoration: const BoxDecoration(
+            //                       shape: BoxShape.circle,
+            //                       color: Colors.red,
+            //                     ),
+            //                     child: const Center(
+            //                       child: Icon(
+            //                         Icons.add,
+            //                         color: Colors.white,
+            //                       ),
+            //                     ),
+            //                   ),
+            //                 )),
+            //           ]);
+            //         })),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
@@ -195,4 +278,16 @@ class _AddPhotoPageState extends State<AddPhotoPage> {
       ),
     );
   }
+}
+
+Widget imagebox() {
+  return Container(
+    height: 125,
+    width: 80,
+    alignment: Alignment.center,
+    decoration: BoxDecoration(
+      color: const Color(0xffD9D8D8),
+      border: Border.all(width: 1),
+    ),
+  );
 }
