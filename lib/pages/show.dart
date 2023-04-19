@@ -111,7 +111,10 @@ class _ShowingPageState extends State<ShowingPage> {
                     buttonWidget(Icons.refresh, Colors.amber),
                     buttonWidget(Icons.cancel, Colors.red),
                     buttonWidget(Icons.star, Colors.blue),
-                    buttonWidget(Icons.favorite_outline_outlined, Colors.green),
+                    GestureDetector(
+                        onTap: () {},
+                        child: buttonWidget(
+                            Icons.favorite_outline_outlined, Colors.green)),
                     buttonWidget(Icons.bolt, Colors.purple),
                   ],
                 ),

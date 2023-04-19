@@ -5,7 +5,7 @@ actions(BuildContext context, String name, type) {
   showDialog(
     context: context,
     builder: (context) {
-      Future.delayed(const Duration(seconds: 1), () {
+      Future.delayed(const Duration(milliseconds: 600), () {
         Navigator.of(context).pop(true);
       });
       return AlertDialog(
@@ -21,7 +21,7 @@ actions(BuildContext context, String name, type) {
                     ? Colors.red
                     : Colors.blue),
         title: Text(
-          "You ${type} ${name}",
+          "You $type $name",
           style: TextStyle(
               color: type == "Liked"
                   ? Colors.green

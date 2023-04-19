@@ -41,7 +41,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Container(
+                  SizedBox(
                     child: Center(
                         child: TextField(
                       controller:
@@ -136,11 +136,13 @@ class _DetailsPageState extends State<DetailsPage> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(35))),
                           onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) {
-                                return const AddPhotoPage();
-                              },
-                            ));
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const MultipleImageSelector();
+                                },
+                              ),
+                            );
                           },
                           child: const Text(
                             "Continue",
